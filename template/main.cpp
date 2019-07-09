@@ -43,6 +43,23 @@ int dy[4]={0,1,0,-1};
 ll invfac[FACSIZE];
 ll fac[FACSIZE];
 
+ll mod_pow(ll ,ll );
+ll mod_add(ll ,ll );
+ll mod_mul(ll ,ll );
+ll mod_div(ll ,ll );
+void make_fact(ll );
+void make_invfact(ll );
+
+
+
+int main(void){
+
+  
+
+  return 0;
+
+}
+
 ll mod_pow(ll x,ll r){
   if(r==0) return 1;
   else if(r==1) return x%mod;
@@ -64,7 +81,7 @@ ll mod_mul(ll a,ll b){
   return (a*b)%mod;
 }
 
-ll div(ll a,ll b){
+ll mod_div(ll a,ll b){
   return mod_mul(a,mod_pow(b,mod-2));
 }
 
@@ -80,13 +97,5 @@ void make_invfact(ll n){
   for(int i=n-1;i>=0;i--){
     invfac[i]=mod_mul(invfac[i+1],i+1);
   }
-
-}
-
-int main(void){
-
-
-
-  return 0;
 
 }
