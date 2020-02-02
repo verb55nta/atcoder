@@ -3,10 +3,14 @@
 t=`pwd`
 k=`basename $t`
 
+#arr=("a" "b" "c" "d" "e" "f")
+
 acc new $k -c all
-cp main.cpp Makefile $k/a
-cp main.cpp Makefile $k/b
-cp main.cpp Makefile $k/c
-cp main.cpp Makefile $k/d
-cp main.cpp Makefile $k/e
-cp main.cpp Makefile $k/f
+
+for i in a b c d e f
+do
+    cp main.cpp Makefile $k/$i
+    mv $k/$i/tests $k/$i/test
+done
+
+

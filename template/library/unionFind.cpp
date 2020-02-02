@@ -1,72 +1,45 @@
-#include<iostream>
-#include<string>
-#include<algorithm>
-#include<cstdlib>
-#include<cmath>
-#include<vector>
-#include<list>
-#include<cstdint>
-#include<bits/stdc++.h>
-#include<queue>
-#include<set>
+#include <iostream>
+#include <vector>
 
-#define rep(i, n) for(int i = 0; i < (int)(n); i++)
-#define rep_r(i, n) for(int i = n-1; i >= 0; i--)
-#define rep1(i, n) for(int i = 1; i <= (int)(n); i++)
-#define REP(i,n) for(int i=0, i##_len=(n); i<i##_len; ++i)
-#define all(x) (x).begin(),(x).end()
-#define SZ(x) ((ll)(x).size())
-#define bit(n) (1LL<<(n))
-#define UNIQUE(v) v.erase( unique(v.begin(), v.end()), v.end() );
-
-#define INF bit(60)
-#define pb push_back
-#define mod 1000000007
-
-template<class T>bool chmax(T &a, const T &b) { if (a<b) { a=b; return 1; } return 0; }
-template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } return 0; }
+#define REP(i, n) for (int i = 0; i < (int)(n); i++)
 
 using namespace std;
-using uif=uint_fast64_t;
-using ll=long long int;
-
-int qp(int a,ll b){int ans=1;do{if(b&1)ans=1ll*ans*a%mod;a=1ll*a*a%mod;}while(b>>=1);return ans;}
-int qp(int a,ll b,int mo){int ans=1;do{if(b&1)ans=1ll*ans*a%mo;a=1ll*a*a%mo;}while(b>>=1);return ans;}
-
-int gcd(int a,int b){return b?gcd(b,a%b):a;}
-int dx[4]={1,0,-1,0};
-int dy[4]={0,1,0,-1};
-
+using ll = long long int;
 
 vector<ll> dp;
 
 void init(ll);
 ll root(ll);
-void unite(ll,ll);
-bool same(ll,ll);
+void unite(ll, ll);
+bool same(ll, ll);
 
-int main(void){
-
-  
+int main(void)
+{
 
   return 0;
-
 }
 
-void init(ll n){
+void init(ll n)
+{
   dp.resize(n);
-  rep(i,n) dp[i]=i;
+  REP(i, n)
+  dp[i] = i;
 }
-ll root(ll x){
-  if( dp[x]==x ) return x;
-  else return dp[x]=root(dp[x]);
+ll root(ll x)
+{
+  if (dp[x] == x)
+    return x;
+  else
+    return dp[x] = root(dp[x]);
 }
-void unite(ll x,ll y){
-  auto rx=root(x);
-  auto ry=root(y);
-  dp[ry]=dp[rx];
+void unite(ll x, ll y)
+{
+  auto rx = root(x);
+  auto ry = root(y);
+  dp[ry] = dp[rx];
   root(y);
 }
-bool same(ll x,ll y){
-  return root(x)==root(y);
+bool same(ll x, ll y)
+{
+  return root(x) == root(y);
 }
