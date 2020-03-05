@@ -5,8 +5,8 @@
 #include <bits/stdc++.h>
 #endif
 
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
+//#include <ext/pb_ds/assoc_container.hpp>
+//#include <ext/pb_ds/tree_policy.hpp>
 
 #define REP(i, n) for (long long int i = 0, i##_len = (n); i < i##_len; ++i)
 #define REP1(i, n) for (long long int i = 1, i##_len = (n); i <= i##_len; ++i)
@@ -50,7 +50,7 @@ using ll = long long int;
 using vec = vector<ll>;
 using mat = vector<vector<ll>>;
 using pa = pair<ll, ll>;
-using tTree = __gnu_pbds::tree<ll, __gnu_pbds::null_type, less<ll>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;
+//using tTree = __gnu_pbds::tree<ll, __gnu_pbds::null_type, less<ll>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;
 
 template <class T>
 inline void input(T &arr)

@@ -1,5 +1,5 @@
 COMPILER  = g++
-CFLAGS    = -g -MMD -MP -Wall -Wextra -Winit-self -Wno-missing-field-initializers -std=c++17
+CFLAGS    = -g -MMD -MP -Wall -Wextra -Winit-self -Wno-missing-field-initializers -std=c++17 -DMBP
 DEBUG = 
 ifeq "$(shell getconf LONG_BIT)" "64"
   LDFLAGS =
